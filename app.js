@@ -7,7 +7,7 @@ const cors = require('cors');
 require('dotenv/config');
 const authJwt = require('./helpers/jwt');
 const errorHandler = require('./helpers/error-handler');
-
+var PORT =process.env.PORT || 5000;
 
 app.use(cors());
 app.options('*', cors())
@@ -45,7 +45,7 @@ mongoose.connect(process.env.CONNECTION_STRING, {
 })
 
 //Server
-app.listen(5000, ()=>{
+app.listen(PORT, ()=>{
 
     console.log('server is running http://localhost:5000');
 })
